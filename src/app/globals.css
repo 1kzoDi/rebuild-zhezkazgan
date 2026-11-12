@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8f7;
+  --foreground: #181a1f;
+  --brand-green: #0d2b22;
+  --brand-green-light: #133c2f;
+  --brand-lime: #a3e635;
+  --brand-lime-hover: #84cc16;
+  --brand-graphite: #181a1f;
+  --brand-graphite-muted: #22252b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-light: var(--brand-green-light);
+  --color-brand-lime: var(--brand-lime);
+  --color-brand-graphite: var(--brand-graphite);
+  --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eceeed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b9c2be;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8a9691;
+}
+
+/* Leaflet container z-index fix so modals/nav stay above map */
+.leaflet-container {
+  z-index: 10;
+  font-family: var(--font-sans);
+}
